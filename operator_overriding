@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication2
+{
+    class calculator
+    {
+        public int n1, n2;
+        public calculator(int num1, int num2)
+        {
+            n1 = num1;
+            n2 = num2;
+        }
+        public static calculator operator -(calculator c1)
+        {
+            c1.n1 = -c1.n1;
+            c1.n2 = -c1.n2;
+            return c1;
+        }
+        public void print()
+        {
+            Console.WriteLine(n1);
+            Console.WriteLine(n2);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            calculator cal= new calculator(1,-2);
+            cal = -cal;
+            cal.print();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT:
+-1
+2
